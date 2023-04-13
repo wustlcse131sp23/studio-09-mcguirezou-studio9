@@ -30,7 +30,18 @@ public class WordCount {
 	public static Map<String, Integer> countWords(List<String> words) {
 
 		// FIXME
-		throw new NotYetImplementedException();
+		Map<String, Integer> poopiest = new HashMap<>();
+		for(int i = 0; i<words.size();i++) {
+			if(poopiest.containsKey(words.get(i))) {
+				int j = poopiest.get(words.get(i));
+				j++;
+				poopiest.put(words.get(i), j);
+			}
+			else {
+				poopiest.put(words.get(i), 1);
+			}
+		}
+		return poopiest;
 
 	}
 }
